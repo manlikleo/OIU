@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     }).then((value) => {
 
                         setTimeout(function(){
-                            window.location.replace("https://open-university.herokuapp.com/programme");
+                            window.location.replace("https://open-university.herokuapp.com/programmelist");
                         }, 1000)
 
                     });
