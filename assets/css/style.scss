@@ -610,6 +610,7 @@ $brandcolor: #000;
 
     &__btn{
         display: block;
+        width: fit-content;
         @extend .border-rad;
     }
 

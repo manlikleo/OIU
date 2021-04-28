@@ -796,6 +796,9 @@
 
 .aboutsec__btn {
   display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .progsec {
