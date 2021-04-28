@@ -108,9 +108,11 @@ document.addEventListener('DOMContentLoaded', function(){
 
         signinform.addEventListener('submit', e => {
             e.preventDefault();
+            const formbtn = document.querySelector('#signin');
+
+            loadButton(formbtn)
             
             // getting the signin form inputs
-
             let emailaddress = signinform.signemail.value,
                 signinpassword = signinform.signpassword.value;
 
@@ -124,7 +126,8 @@ document.addEventListener('DOMContentLoaded', function(){
                 .then((sucess)=> {
                     swal({
                         type:'successful',
-                        title:'Successfully signed in',
+                        title:'Dear User, You successfully signed in',
+                        buttons:"Proceed to Programmes"
                     }).then((value) => {
 
                         setTimeout(function(){
@@ -200,3 +203,10 @@ function showSignUp(e){
 }
 
 
+
+function loadButton(Button){
+
+
+
+    Button.innerHTML = `<i class="fa fa-refresh fa-spin"></i> Processing ...`;
+}

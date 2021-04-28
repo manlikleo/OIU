@@ -148,11 +148,10 @@ $brandcolor: #000;
     }
 
     &__links{
-
         text-decoration: none;
         color: #FFF;
         @include mobile{
-            
+            font-size: 1.3rem;
             margin-bottom: 2rem;
             
         }
@@ -248,7 +247,7 @@ $brandcolor: #000;
     justify-content: center;
 
     @include mobile{
-        height: 84%;
+        height: 90%;
     }
     @include laptop{
         height: 100%;
@@ -312,14 +311,15 @@ $brandcolor: #000;
 // footer styling 
 .footer{
     display: flex;
-    padding: 2% 4%;
     background-color: #000;
     @extend.navpattern;
     width: 100%; 
     @include mobile{
+        padding: 4%;
         align-items: center;
     }
     @include tablet{
+        padding: 2% 4%;
         align-items: start;
         flex-direction: row;
         justify-content: space-between;
@@ -362,9 +362,11 @@ $brandcolor: #000;
 
         @include mobile{
             width: 80%;
+            margin: 2rem 0;
         }
         @include tablet{
             width: 15%;
+            margin: 0;
         }
     }
 

@@ -227,4 +227,17 @@ $brandcolor: #000;
     color: red;
 }
 
+.swal-title{
     
+    @include mobile{
+        font-size: .9rem;
+    }
+    @include tablet{
+        font-size: 1rem;
+    }
+    color: $brandcolor;
+}
+.swal-button{
+    background-color: $brandcolor;
+    border: none;
+}
