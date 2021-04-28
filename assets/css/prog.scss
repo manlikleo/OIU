@@ -231,7 +231,7 @@ $brandcolor: #000;
             top: calc(var(--clicle_height) / 2);
             width: 1px;
             @include mobile{
-                height: 180px;
+                height: 200px;
             }
             @include laptop{
                 height: 153px;
@@ -261,7 +261,7 @@ $brandcolor: #000;
     width: 100%;
     padding: 2% 16%;
     position: relative;
-    margin: 2rem 0;
+    margin: 6rem 0;
 
     &__title{
         margin-bottom: 2rem;

@@ -334,7 +334,7 @@
 
 @media screen and (min-width: 320px) {
   .procedures__circle::before {
-    height: 180px;
+    height: 200px;
   }
 }
 
@@ -364,7 +364,7 @@
   width: 100%;
   padding: 2% 16%;
   position: relative;
-  margin: 2rem 0;
+  margin: 6rem 0;
 }
 
 .activities__title {
