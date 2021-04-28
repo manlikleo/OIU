@@ -498,7 +498,18 @@
 
 .prog {
   width: 100%;
-  padding: 2% 6%;
+}
+
+@media screen and (min-width: 320px) {
+  .prog {
+    padding: 6%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .prog {
+    padding: 2% 6%;
+  }
 }
 
 .prog__wrapper {

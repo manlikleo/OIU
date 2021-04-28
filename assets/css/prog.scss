@@ -355,7 +355,12 @@ $brandcolor: #000;
 
 .prog{
     width: 100%;
-    padding:2% 6%;
+    @include mobile{
+        padding:6%;
+    }
+    @include tablet{
+        padding:2% 6%;
+    }
 
     &__wrapper{
         display: flex;

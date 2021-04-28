@@ -38,10 +38,15 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
+
         // event listner that handles signup for users
         userform.addEventListener('submit', e=>{
 
             e.preventDefault();
+
+            let signupBtn = document.querySelector('#register'); 
+
+            loadButton(signupBtn);
 
             // user form inputs using the form name attribute and value to get user inputs
             let email = userform.email.value,
@@ -53,8 +58,10 @@ document.addEventListener('DOMContentLoaded', function(){
                 // I also checked if the confirmed password is equal to the passowrd input if not so an error message will appear. 
                 if(email === ' ' || password === '' || confirmpass ===''){
                     errormessage.innerHTML = 'All fields are required';
+                    signupBtn.innerHTML =`Register`;
                 }else if(password !== confirmpass){
                     errormessage.innerHTML = 'Check your password';
+                    signupBtn.innerHTML =`Register`;
                 }else{
                     // if all requirement are met we are working with firebase for servless signup and realtime database for our users
                     firebase.auth().createUserWithEmailAndPassword(email,password)
@@ -89,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
                     }).catch((error) => {
+
                         // Handle Errors here.
                         var errorCode = error.code;
                         var errorMessage = error.message;
@@ -108,7 +116,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
         signinform.addEventListener('submit', e => {
             e.preventDefault();
-            const formbtn = document.querySelector('#signin');
+            const formbtn = document.querySelector('#signin'),
+            loginmessage = document.querySelector('#loginmessage');
 
             loadButton(formbtn)
             
@@ -118,9 +127,11 @@ document.addEventListener('DOMContentLoaded', function(){
 
             // input validation conditions if met we will sign in our user to the programme page
             if(emailaddress === ''){
-                errormessage.innerHTML = 'Your Email Address is required to log in'
+                loginmessage.innerHTML = 'Your Email Address is required';
+                formbtn.innerHTML =`Try Again`;
             }else if(signinpassword === ''){
-                errormessage.innerHTML = 'Password is required';
+                loginmessage.innerHTML = 'Password is required';
+                formbtn.innerHTML =`Try Again`;
             }else{
                 firebase.auth().signInWithEmailAndPassword(emailaddress,signinpassword)
                 .then((sucess)=> {
@@ -129,13 +140,14 @@ document.addEventListener('DOMContentLoaded', function(){
                         title:'Dear User, You successfully signed in',
                         buttons:"Proceed to Programmes"
                     }).then((value) => {
-
+                        formbtn.innerHTML =`Redirecting ....`;
                         setTimeout(function(){
                             window.location.replace("https://open-university.herokuapp.com/programmelist");
                         }, 1000)
 
                     });
                 }).catch((error) => {
+                    formbtn.innerHTML =`Try Again`;
                     let errorCode = error.code,
                     errorMessage = error.message;
                     console.log(errorCode + errorMessage);
@@ -205,8 +217,7 @@ function showSignUp(e){
 
 
 function loadButton(Button){
-
-
-
-    Button.innerHTML = `<i class="fa fa-refresh fa-spin"></i> Processing ...`;
+    Button.textContent = `Processing...`;  
 }
+
+   
