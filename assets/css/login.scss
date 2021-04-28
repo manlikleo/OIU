@@ -66,6 +66,7 @@ $brandcolor: #000;
 }
 
 .login{
+
     padding:0;
     height: 100vh;
     background: #FFF;
@@ -113,12 +114,30 @@ $brandcolor: #000;
     }
 
     &__interface{
-        padding: 2%;
-        width: 40%;
+
+
+        @include mobile{
+            padding: 6%;
+            width: 100%;
+        }
+        @include tablet{
+            padding: 2%;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            height: fit-content;
+            margin-left: 6rem;
+        }
+
+        @include laptop_W{
+            margin-left: 19rem;
+        }
+        
+    }
+
+    &__body{
         display: flex;
         flex-direction: column;
-        height: fit-content;
-        margin-left: 6rem;
     }
 
     &__header{
@@ -127,13 +146,29 @@ $brandcolor: #000;
     &__title{
         font-size: 2rem;
         font-weight: 600;
+
+        @include laptop_W{
+            font-size:6rem;
+        }
+        
     }
     &__inputbody{
-        width: 60%;
+        
         height: 3rem;
         margin-bottom: 2rem;
         border: 1px solid #000;
 
+        @include mobile{
+            width: 100%;
+        }
+        @include laptop{
+            width: 60%;
+        }
+        @include laptop_W{
+            width: 75%;
+            height: 5rem;
+        }
+    
         input{
             width: 100%;
             height: 100%;
@@ -143,6 +178,7 @@ $brandcolor: #000;
     }
 
     &__btn{
+
         border: none;
         padding: .6rem 2.4rem;
         border-radius: 15px;
@@ -152,7 +188,20 @@ $brandcolor: #000;
         -o-border-radius: 15px;
         background: #000;
         color: #FFF;
+
+        @include mobile{
+            width: 100%;
         }
+        @include tablet{
+            width: 60%;
+        }
+
+        @include laptop_W{
+            padding: 2.5rem 2.4rem;
+            width: 75%;
+        }
+        
+    }
 
 
         &__footer{

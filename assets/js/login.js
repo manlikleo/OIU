@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     }).then((value) => {
 
                         setTimeout(function(){
-                            window.location.replace("http://localhost:5500/");
+                            window.location.replace("https://open-university.herokuapp.com/");
                         }, 1000)
 
                     });
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function(){
             }).then((value) => {
 
                 setTimeout(function(){
-                    window.location.replace("http://localhost:5500/login");
+                    window.location.replace("https://open-university.herokuapp.com/login");
                 }, 1000)
 
             });
