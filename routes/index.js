@@ -74,6 +74,27 @@ router.get("/programme", (req,res)=>{
     
 });
 
+// this route renders the programme page
+router.get("/programmelist", (req,res)=>{
+
+    // adding the css for the login page
+    const elements = [...initialElements,"assets/css/login.min.css","assets/js/prog.js","assets/css/prog.min.css",]
+
+    let title = "Programmes | Open University"
+    const meta = funs.meta({
+        description:"join us open university",
+        keywords:"education for all",
+    },req);
+
+    res.render("programmelist", {
+        title,
+        meta,
+        elements,
+        path:funs.pathToTheRoot(req._parsedUrl.path),
+    })
+    
+});
+
 
 
 
