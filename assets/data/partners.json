@@ -1,0 +1,24 @@
+[  
+    
+    {
+        "Partner__img": "../assets/images/kenya.png",
+        "partner__name": "Kenya Government"
+    },
+    {
+        "Partner__img": "../assets/images/uganda.png",
+        "partner__name": "Uganda goverment"
+    },
+    {
+        "Partner__img": "../assets/images/tanzania.png",
+        "partner__name": "Kenya Government"
+    },
+    {
+        "Partner__img": "../assets/images/andela.jpeg",
+        "partner__name": "Andela"
+    },
+    {
+        "Partner__img": "../assets/images/kcb.png",
+        "partner__name": "KCB Bank"
+    }
+
+]

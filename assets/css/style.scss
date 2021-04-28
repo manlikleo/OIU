@@ -1,0 +1,704 @@
+@import "./media_queries";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+$brandcolor: #000;
+
+
+// template for flex item 
+.navpattern {
+    display:flex;
+    align-items: center;
+    @include mobile{
+        justify-content:center;
+        flex-direction: column;
+    }
+    @include tablet{
+        justify-content: space-between;
+        flex-direction: row;
+    }
+}
+
+// a template variable for border radius
+.border-rad{
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+
+// styling for navbar components
+.navbar{
+    padding: .5rem 1rem;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.445) ;
+
+    &__logo{
+        width:fit-content;
+    }
+    &__pic{
+        width: 200px;
+    }
+    &__menubar{
+         @include mobile{
+             display:block;
+             font-size: 2rem;
+             color: #FFF;
+         }
+         @include laptop{
+            display: none;
+         }
+    }
+
+    &__closebar{
+        @include mobile{
+            display:block;
+            position:absolute;
+            top: 2pc;
+            right:2pc;
+            font-size: 2rem;
+            color: #FFF;
+        }
+        @include laptop{
+           display: none;
+        } 
+    }
+
+
+
+    &__inner,&__login{
+        list-style: none;
+        text-decoration: none;
+    }
+
+    &__section{
+
+        @extend .navpattern;
+
+        @include mobile{
+            display: none;
+            position:absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $brandcolor;
+            transform: translateX(100%);
+            -webkit-transform: translateX(100%);
+            -moz-transform: translateX(100%);
+            -ms-transform: translateX(100%);
+            -o-transform: translateX(100%);
+            }
+
+            
+        @include laptop{
+            display: flex;
+            position: relative;
+            width: 74%;
+            height: fit-content;
+            background-color:transparent;
+            transform: translateX(0%);
+            -webkit-transform: translateX(0%);
+            -moz-transform: translateX(0%);
+            -ms-transform: translateX(0%);
+            -o-transform: translateX(0%);
+        }
+    }
+
+    &__inner{
+        @extend .navpattern;
+        width: 50%;
+        @include mobile{
+            width: 100%;
+            height: 55%;
+            justify-content: space-evenly;
+        }
+        @include laptop{
+            width: 50%;
+            height: fit-content;
+            justify-content: space-between;
+        }
+    }
+
+    &__login{
+
+        @extend .navpattern;
+        justify-content: space-evenly;
+
+       
+        @include mobile{
+            width: 100%;
+            height: 30%;
+        }
+
+        @include laptop{
+            width:30%;
+            margin-right: 1rem;
+        }
+    }
+
+    &__links{
+
+        text-decoration: none;
+        color: #FFF;
+        @include mobile{
+            
+            margin-bottom: 2rem;
+            
+        }
+        @include laptop{
+            padding: .4 .8rem;
+        }
+        
+        &:hover{
+            border-bottom: 2px solid #FFF;
+        }
+    }
+
+    &__btn{
+        text-decoration: none;
+        @extend .border-rad;
+
+        @include mobile{
+            padding: .6rem 1.8rem;
+            background-color: #FFF;
+            color: $brandcolor;
+        }
+        @include laptop{
+            padding: .4rem 1.2rem;
+            background-color:#000;
+            color: #FFF;
+        }
+        
+    }
+}
+    
+// this class activates the hidden navbar section links using javascript classlist method
+.active-nav{
+    display: flex;
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transition: transform 1s ease-in;
+    -webkit-transition: transform 1s ease-in;
+    -moz-transition: transform 1s ease-in;
+    -ms-transition: transform 1s ease-in;
+    -o-transition: transform 1s ease-in;
+    z-index: 3;
+}
+
+
+// hero section
+
+.hero{
+    position: relative;
+    height: 80vh;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+
+    &__video{
+        position:absolute;
+        left:50%;
+        top: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        height: 60vh;
+        -webkit-transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        z-index: -1;
+        object-fit: cover!important;
+    }
+    // &:before{
+    //     content: '';
+    //     position: absolute;
+    //     background: rgba(0, 0, 0, 0.5);
+    //     border-radius: 5px;
+    //     top: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     left: 0;
+    //     z-index: 0;
+    // }
+}
+
+.navhero{
+    width: 100%;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.445);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include mobile{
+        height: 84%;
+    }
+    @include laptop{
+        height: 100%;
+    }
+    @include laptop_L{
+        height: 95%;
+    }
+
+    // @include 
+    // @include laptop_L{
+
+    // }
+
+    &__text{
+        color: #FFF;
+        margin-bottom: 1.8rem;
+        text-align: center;
+        width: 60%;
+        z-index: inherit;
+       
+        @include mobile{
+            font-size: 1.4rem;
+        }
+        @include laptop{
+           position: absolute;
+           top: 3pc;
+            font-size: 2rem;
+            
+        }
+
+        @include laptop_L{
+            top: 8pc;
+            font-size: 3rem;
+        }
+        @include laptop_W{
+            top: 17pc;
+            font-size: 6rem;
+        }
+    }
+
+    &__btn{
+        
+        text-decoration: none;
+        padding: .8rem 1.6rem;
+        background-color: $brandcolor;
+        color: #FFF;
+       
+
+        @include mobile{
+            display: block;
+        }
+
+        @include laptop{
+            display: none;
+        }
+       
+    }
+}
+
+
+// footer styling 
+.footer{
+    display: flex;
+    padding: 2% 4%;
+    background-color: #000;
+    @extend.navpattern;
+    width: 100%; 
+    @include mobile{
+        align-items: center;
+    }
+    @include tablet{
+        align-items: start;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+
+
+    &__quicklinks{
+        list-style: none;
+    }
+    &__title{
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #FFF;
+        @include mobile{
+            text-align: center;
+        }
+        @include tablet{
+            text-align: left;
+        }
+    }
+    &__links{
+        margin-bottom: .6rem;
+
+        & a{
+            text-decoration: none;
+            color: #FFF;
+            @include mobile{
+                text-align: center;
+            }
+            @include tablet{
+                text-align: left;
+            }
+        }
+    }
+    &__socials{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include mobile{
+            width: 80%;
+        }
+        @include tablet{
+            width: 15%;
+        }
+    }
+
+    &__sociallinks{
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__socontainer{
+        height: 30px;
+        width: 30px;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #FFF;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        -ms-border-radius: 100%;
+        -o-border-radius: 100%;
+}
+
+    .fab{
+        font-size:12px;
+        color:$brandcolor;
+    }
+
+    &__linkcont,&__logo{
+        margin-bottom:2rem;
+    }
+}
+
+
+// cards section that houses the places visited by student in the past
+.cards{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    @include mobile{
+        height: 78vh;
+    }
+    @include tablet{
+        height: 40vh;
+    }
+    @include laptop{
+        height: 50vh;
+    }
+
+    &__container{
+        width: 100%;
+        display: flex;
+       
+
+        @include mobile{
+            position: relative;
+            flex-direction: column;
+            padding: 6%;
+            justify-content:space-between;
+        }
+
+        @include tablet{
+            padding: 1% 6%;
+            flex-direction:row;
+            justify-content: space-evenly;
+        }
+        @include laptop_L{
+            padding: 1% 4%;
+        }
+
+        @include laptop{
+            align-items: center;
+            flex-direction: row;
+            position:absolute;
+            z-index: 3;
+            top: -13pc;
+            left: 0pc;
+        }
+
+        @include laptop_W{
+            top: -26pc;
+        }
+    }
+
+    &__bookmark{
+        display:none;
+        position: absolute;
+        top: 1pc;
+        right: 1pc;
+        font-size: 1.4rem;
+        text-decoration: none;
+        color: #FFF;
+    }
+    
+
+
+    &__card{
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content:center;
+        background-image: linear-gradient(top, rgba(0, 0, 0, 0.5)),url(../images/zanzibar.jpg) ;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        @extend .border-rad;
+
+        @include mobile{
+            margin-bottom: 2rem;
+        }
+      
+        @include tablet{
+            margin: 0;
+            width: 20%;
+            height: 30vh;
+        }
+        @include laptop{
+            width: 18%;
+            height: 40vh;
+        }
+
+        @include laptop_L{
+            width: 20%;
+            height: 35vh;
+        }
+       
+        &:hover{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            .cards__bookmark{
+                display: block;
+            }
+        }
+       
+    }
+    #cardtwo{
+        background-image: linear-gradient(top, rgba(0, 0, 0, 0.5)),url(../images/ghana.jpg) ;
+    }
+
+    #cardthree{
+        background-image: linear-gradient(top, rgba(0, 0, 0, 0.5)),url(../images/juls.jpeg) ; 
+    }
+
+    #cardfour{
+        background-image: linear-gradient(top, rgba(0, 0, 0, 0.5)),url(../images/kigali.jpg) ; 
+    }
+
+    &__text{
+        padding: 6%;
+        text-align: center;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #FFF;
+
+        @include mobile{
+            font-size: 1rem;
+        }
+        @include tablet{
+            font-size: 1.2rem;
+        }
+        @include laptop_W{
+            font-size: 2rem;
+        }
+        
+    }
+
+    
+}
+
+// cards sections stops here
+
+
+// about section of the homepage starts here 
+.aboutsec{
+    padding: 3% 12%;
+    
+    @include mobile{
+        margin-top: 0;
+    }
+    @include laptop{
+        margin-top: -10rem;
+    }
+    @include laptop_W{
+        margin-top: -30rem;
+    }
+
+    &__wrapper{
+        @extend .navpattern;
+        justify-content: center;  
+    }
+
+    &__pic{
+       
+        @include mobile{
+            width: 100%;
+            margin-bottom: 1rem;
+            height: 260px;
+            
+        }
+        @include tablet{
+            width: 40%;
+            margin:0;
+            margin-right: 2rem;
+        }
+
+        @include laptop_W{
+            height: 400px;
+        }
+
+    }
+
+    &__img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @extend .border-rad;
+    }
+
+    &__content{
+        
+        margin-left: 2rem;
+
+        @include mobile{
+            width: 100%;
+        }
+        @include tablet{
+            width: 50%;
+        }
+        @include laptop{
+            width: 40%;
+        }
+    }
+
+    &__title{
+        margin-bottom: 1rem;
+    }
+
+    &__subtitle{
+        margin-bottom: 1.5rem;
+    }
+
+    &__btn{
+        display: block;
+        @extend .border-rad;
+    }
+
+}
+
+// programme list section 
+.progsec{
+    @extend .aboutsec;
+    margin:3rem 0 ;
+   
+    &__wrapper{
+        @extend .aboutsec__wrapper;
+
+        @include mobile{
+            flex-direction: column;
+        }
+        @include tablet{
+            flex-direction: row-reverse;
+        }
+
+    }
+}
+
+.regwrapper{
+
+    @include mobile{
+        flex-direction: column;
+    }
+    @include tablet{
+        flex-direction: row;
+    }
+}
+
+// the value section took styles from the exisiting using scss extend features
+.values{
+    background-color: rgba(0, 0, 0, 0.479);
+
+    &__font{
+        margin-top: 1rem;
+        font-size: 3rem;
+    }
+
+    &__prof{
+        font-weight: 600;
+    }
+}
+
+// partners section 
+.partners{
+    padding: 1% 4%;
+    margin-bottom: 2rem;
+
+    &__wrapper{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+        align-items: center;
+    }
+
+    &__title{
+        margin-bottom: 3rem;
+    }
+
+    &__text{
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    &__container{
+        width: 100%;
+        @extend .navpattern;
+    }
+    &__logo{
+        width: 200px;
+        @include mobile{
+            margin-bottom: 1rem;
+        }
+        @include tablet{
+            margin-right: 1rem;
+        }
+    }
+    &__pic{
+        width: 100%;
+        object-fit: cover;
+    }
+
+
+
+}
+
+

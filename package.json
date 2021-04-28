@@ -1,0 +1,38 @@
+{
+  "name": "oiu",
+  "version": "1.0.0",
+  "description": "university for all",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manlikleo/OIU.git"
+  },
+  "author": "leo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manlikleo/OIU/issues"
+  },
+  "homepage": "https://github.com/manlikleo/OIU#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bootstrap": "^5.0.0-beta3",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "firebase": "^8.4.2",
+    "sass": "^1.32.11",
+    "sass-loader": "^11.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "keywords": [
+    "university",
+    "free",
+    "for",
+    "all"
+  ]
+}

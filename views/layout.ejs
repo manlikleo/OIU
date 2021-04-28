@@ -1,0 +1,42 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- this is a condtional statment instructing thr link rel to check for elements that ends wuth .css , they are added from the node routes -->
+    <% if (typeof elements !== "undefined" && elements.length) {
+                     elements.map(el=>{
+                        if(el.endsWith('.css')){
+                            if(!el.match('//')  ){ %>
+
+                    <link rel="stylesheet" href="<%= path+el %>">
+                    <% } else {%>
+                        <link rel="stylesheet" href="<%= el %>">
+                        <% }}})  } %>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- title content coming from the route -->
+    <title><%- title %></title>
+
+</head>
+    <body>
+        <%-body%>   
+   
+    
+    <% if (typeof elements !== undefined && elements.length) {
+        elements.map(el=>{
+            if(el.endsWith('.js') ){
+                if(!el.match('//')  ){ 
+    %>
+            <script src="<%= path+el %>"></script>
+            <% }
+    else { %>
+                <script src="<%= el %>"></script>
+                <% }  }}) } %>
+
+                
+</body>
+</html>

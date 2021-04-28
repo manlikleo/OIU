@@ -1,0 +1,132 @@
+
+<%- include('./partials/header.ejs') %>
+
+<!-- cards section starts here  these includes places students have visted -->
+<section class="cards">
+    <div class="cards__container">
+        <div class="cards__card">
+            <a class="cards__bookmark" href="#"><i class="fas fa-bookmark"></i></a>
+            <p class="cards__text"><span>ZANZIBAR SPICE TOUR</span></p>
+        </div>
+        <div class="cards__card" id="cardtwo">
+            <a class="cards__bookmark" href="#"><i class="fas fa-bookmark"></i></a>
+            <p class="cards__text">SLAVE TRADE TOUR</p>
+        </div>
+        <div class="cards__card" id="cardthree">
+            <a class="cards__bookmark" href="#"><i class="fas fa-bookmark"></i></a>
+            <p class="cards__text">MWALIMU NYERERE TOUR</p>
+        </div>
+        <div class="cards__card" id="cardfour">
+            <a class="cards__bookmark" href="#"><i class="fas fa-bookmark"></i></a>
+            <p class="cards__text">KIGALI REMEMBERANCE TOUR</p>
+        </div>
+
+    </div>
+    
+</section>
+<!-- cards sections ends here -->
+
+<!-- about section that entails information about the univeristy -->
+<section id="about" class="aboutsec">
+
+    <div class="aboutsec__wrapper">
+
+        <div class="aboutsec__pic">
+            <img class="aboutsec__img" src="../assets/images/student.jpg" alt="about us">
+        </div>
+
+        <div class="aboutsec__content">
+            <h3 class="aboutsec__title">About Us</h3>
+            <p class="aboutsec__subtitle">Open University is modern public research institue that supports young people to undertake short term non-credit student exchange programmes with a goal of empowering them to discover their true potential.</p>
+            <button class="navhero__btn aboutsec__btn">View More</button>
+        </div>
+
+
+
+    </div>
+
+</section>
+
+<!-- programme section that entails information about university -->
+<section id="prog" class="progsec">
+
+    <div class="progsec__wrapper">
+
+        <div class="aboutsec__pic">
+            <img class="aboutsec__img" src="../assets/images/prog.jpg" alt="programme">
+        </div>
+
+        <div class="aboutsec__content">
+            <h3 class="aboutsec__title">Programmes</h3>
+            <p class="aboutsec__subtitle">Open Institue prepares students for the competitive regional or international job market and creates connections students need as they consider to either enter the world of entrepreneurship or employment.</p>
+            <button class="navhero__btn aboutsec__btn">View Programmes</button>
+        </div>
+
+
+
+    </div>
+
+</section>
+
+<!-- registration section that entails how new student to register -->
+<section class="progsec">
+
+    <div class="progsec__wrapper regwrapper">
+
+        <div class="aboutsec__pic">
+            <img class="aboutsec__img" src="../assets/images/registered.jpg" alt="programme">
+        </div>
+
+        <div class="aboutsec__content">
+            <h3 class="aboutsec__title">Registration</h3>
+            <p class="aboutsec__subtitle">The regional student exchange programmes are organised into cohorts. Starting November 2020 to December 2021, Open University will enrol seven cohorts of students from two countries; Kenya and Tanzania, and from 2022, open univeristy will open the enrolment to students from Uganda, Rwanda, Burundi and...</p>
+            <button class="navhero__btn aboutsec__btn">Enroll Now</button>
+        </div>
+
+
+
+    </div>
+
+</section>
+<!-- regsistration ends here -->
+
+<!-- our values -->
+
+<section class="progsec values">
+
+    <div class="progsec__wrapper regwrapper">
+
+        <div class="aboutsec__pic">
+            <img class="aboutsec__img" src="../assets/images/prof.jpg" alt="programme">
+        </div>
+
+        <div class="aboutsec__content">
+            <p class="aboutsec__title values__font"><i class="fas fa-quote-left"></i></p>
+            <p class="aboutsec__subtitle">Joining Open university is the best decision you can make to progress your career path. Our teaching techniques are modern with experienced and committed individuals who want you to succeed and be the best in the world. we are waiting to have you this November</p>
+            <p class="aboutsec__subtitle values__prof">PROF. AKUMA DUNCAN</p>
+
+        </div>
+
+
+
+    </div>
+
+</section>
+
+<!-- partners section of the website the partners pictures are been rendered from a json file using Axios fetch api -->
+<section class="partners">
+
+    <div class="partners__wrapper">
+
+        <div class="partners__title">
+            <h3 class="partners__text">Our Partners</h3>
+        </div>
+
+        <!--images to be rendered to the  -->
+        <div id="partnerswrapper" class="partners__container"></div>
+      
+            
+    </div>
+
+</section>
+<%- include('./partials/footer.ejs') %>

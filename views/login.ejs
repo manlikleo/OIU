@@ -1,0 +1,116 @@
+<%- include('./partials/header.ejs') %>
+<!-- header components -->
+<section class="login">
+
+    <div class="login__wrapper">
+
+        <form id="userform" class="login__interface">
+
+                <div class="login__header">
+                    <p  class="login__title signparams login__hide">Sign In</p>
+                    <p  class="login__title regparams">Register</p>
+                    <span id="errormessage" class="error"></span>
+                </div>
+
+                <div class="login__body">
+
+                    <div class="login__inputbody">
+                        <input type="email" name="email" placeholder="Email Address">
+                    </div>
+
+                    <div class="login__inputbody">
+                        <input type="password" name="password" placeholder="password">
+                    </div>
+
+                    <div class="login__inputbody regparams">
+                        <input type="password" name="confirmedpass" placeholder="confirm password">
+                    </div>
+
+                    <button id="register" class="login__btn">Register</button>
+                </div>
+
+                <div class="login__footer">
+                    <a id="instead" class="login__footerlinks" href="#">Sign In instead</a>
+                    
+                </div>
+
+        </form>
+
+        <form id="sign" class="login__interface login__hide">
+
+                <div class="login__header">
+                    <p  class="login__title signparams">Sign In</p>
+                </div>
+
+                <div class="login__body">
+
+                    <div class="login__inputbody">
+                        <input type="email" name="signemail" placeholder="Email Address">
+                    </div>
+
+                    <div class="login__inputbody">
+                        <input type="password" name="signpassword" placeholder="password">
+                    </div>
+
+                    <button id="register" class="login__btn">Sign In</button>
+                </div>
+
+                <div class="login__footer">
+                    <a id="forgetpass" class="login__footerlinks signparams" href="#">Forgot Password</a>
+                    <a id="registerinstead" class="login__footerlinks registerinstead" href="#">Register</a>  
+                </div>
+        </form>
+
+        <form id="forgetpassword" class="login__interface login__hide">
+
+                <div class="login__header">
+                    <p  class="login__title signparams">Reset Your password</p>
+                </div>
+
+                <div class="login__body">
+                    <div class="login__inputbody">
+                        <input type="email" name="signemail" placeholder="Email Address">
+                    </div>
+
+                    <button id="register" class="login__btn">Reset Password</button>
+                </div>
+        </form>
+
+        <div class="login__pic">
+            <p class="login__imgtext">You're a step away from your dreams</p>
+            <p class="login__imgsubtext">Join us Today</p>
+        </div>
+    </div>
+
+</section>
+<!-- footer components -->
+<%- include('./partials/footer.ejs') %>
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCv8P1tJBFpRf-s_59SPFH0V-HQAxvKgW4",
+    authDomain: "open-university-3c1ce.firebaseapp.com",
+    projectId: "open-university-3c1ce",
+    storageBucket: "open-university-3c1ce.appspot.com",
+    messagingSenderId: "192430762373",
+    appId: "1:192430762373:web:7fc33f39019ffcea7c3cec",
+    measurementId: "G-53CVKY5KLH"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
