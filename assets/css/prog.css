@@ -263,7 +263,7 @@
 
 @media screen and (min-width: 320px) {
   .procedures__contents p {
-    font-size: .55rem;
+    font-size: .65rem;
   }
 }
 
@@ -303,13 +303,6 @@
 
 @media screen and (min-width: 320px) {
   .procedures__circle {
-    width: 10px;
-    height: 10px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .procedures__circle {
     width: 15px;
     height: 15px;
   }
@@ -341,7 +334,7 @@
 
 @media screen and (min-width: 320px) {
   .procedures__circle::before {
-    height: 160px;
+    height: 180px;
   }
 }
 

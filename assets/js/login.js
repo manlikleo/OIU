@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
                     }).catch((error) => {
-
+                        signupBtn.innerHTML =`Register Again`;
                         // Handle Errors here.
                         var errorCode = error.code;
                         var errorMessage = error.message;

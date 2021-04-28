@@ -181,7 +181,7 @@ $brandcolor: #000;
 
         p{
             @include mobile{
-                font-size: .55rem;
+                font-size: .65rem;
             }
             @include tablet{
                 font-size: .8rem;
@@ -210,10 +210,6 @@ $brandcolor: #000;
         background-color: $brandcolor;
 
         @include mobile{
-            width: 10px;
-            height: 10px;
-        }
-        @include tablet{
             width: 15px;
             height: 15px;
         }
@@ -235,7 +231,7 @@ $brandcolor: #000;
             top: calc(var(--clicle_height) / 2);
             width: 1px;
             @include mobile{
-                height: 160px;
+                height: 180px;
             }
             @include laptop{
                 height: 153px;
